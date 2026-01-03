@@ -2,6 +2,12 @@
 
 This is a todo application built with FastAPI, SQLModel, and Neon PostgreSQL as part of the Spec-Driven Development Hackathon Phase II.
 
+## Deployment Notes
+
+This project is structured as a full-stack application:
+- **Frontend**: Next.js application (located in `/frontend` directory) - deploy this to Vercel
+- **Backend**: FastAPI application (located in `/backend` directory) - deploy this separately to a Python-compatible platform
+
 ## Backend Foundation & Persistence
 
 This feature implements the backend foundation for the Todo application with CRUD operations for tasks.
