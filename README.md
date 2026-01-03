@@ -2,11 +2,29 @@
 
 This is a todo application built with FastAPI, SQLModel, and Neon PostgreSQL as part of the Spec-Driven Development Hackathon Phase II.
 
-## Deployment Notes
+## Deployment Instructions
 
-This project is structured as a full-stack application:
-- **Frontend**: Next.js application (located in `/frontend` directory) - deploy this to Vercel
-- **Backend**: FastAPI application (located in `/backend` directory) - deploy this separately to a Python-compatible platform
+This project is structured as a full-stack application with separate frontend and backend:
+
+### Frontend Deployment (Vercel)
+1. Go to [Vercel](https://vercel.com/)
+2. Create a new project and import this GitHub repository
+3. **Critical**: In the configuration step, set the "Root Directory" to `frontend`
+4. Add environment variables:
+   - `NEXT_PUBLIC_API_URL`: Set this to your deployed backend URL (e.g., `https://your-backend.onrender.com` or your backend deployment URL)
+5. Deploy the project
+
+### Backend Deployment (Separate Platform)
+Deploy the backend separately using a Python-compatible platform:
+- [Railway](https://railway.app/)
+- [Render](https://render.com/)
+- [PythonAnywhere](https://www.pythonanywhere.com/)
+- [AWS](https://aws.amazon.com/), [GCP](https://cloud.google.com/), or [Azure](https://azure.microsoft.com/)
+
+The backend is located in the `/backend` directory and contains:
+- FastAPI application
+- Database configuration
+- Authentication system
 
 ## Backend Foundation & Persistence
 
