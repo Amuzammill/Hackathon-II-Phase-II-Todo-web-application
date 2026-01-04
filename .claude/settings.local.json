@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir backendsrc)",
+      "Bash(find backend/src -name \"*.py\" -exec grep -l \"FastAPI\\\\|fastapi\" {} ;)"
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Task } from "@/types";
-import { cn, formatRelativeTime } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 
 interface TaskCardProps {
   task: Task;
@@ -94,7 +94,7 @@ export function TaskCard({
             </p>
           )}
           <p className="mt-2 text-xs text-zinc-400 dark:text-zinc-500">
-            {formatRelativeTime(task.updated_at)}
+            {formatDate(task.updated_at)}
           </p>
         </div>
 
