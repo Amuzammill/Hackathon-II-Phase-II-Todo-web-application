@@ -1,6 +1,22 @@
 # Todo Full-Stack Web Application
 
-This is a todo application built with FastAPI, SQLModel, and Neon PostgreSQL as part of the Spec-Driven Development Hackathon Phase II.
+This is a todo application built with Next.js (frontend), FastAPI (backend), SQLModel, and Neon PostgreSQL as part of the Spec-Driven Development Hackathon Phase II.
+
+## Project Structure
+
+This is a full-stack application with:
+
+- **Frontend**: Next.js 16.1.1 application in the `/frontend` directory
+  - Task management dashboard
+  - Authentication pages (sign in/up)
+  - Responsive UI with Tailwind CSS
+  - API client for backend communication
+
+- **Backend**: FastAPI application in the `/backend` directory
+  - RESTful API endpoints
+  - JWT-based authentication
+  - SQLModel for database operations
+  - Neon PostgreSQL database integration
 
 ## Deployment Instructions
 
@@ -132,3 +148,41 @@ Authentication can be tested using the comprehensive test suite:
 cd backend
 python -m pytest tests/test_auth_utils.py  # Test JWT utilities
 ```
+
+## Running the Application Locally
+
+To run this full-stack application locally:
+
+### Backend Setup
+1. Navigate to the backend directory: `cd backend`
+2. Install dependencies: `pip install -r requirements.txt` (or use poetry if configured)
+3. Set up environment variables if needed (or use defaults)
+4. Start the backend: `uvicorn src.api.main:app --reload`
+5. The backend will run on `http://127.0.0.1:8000`
+
+### Frontend Setup
+1. Navigate to the frontend directory: `cd frontend`
+2. Install dependencies: `npm install`
+3. Create a `.env.local` file with required environment variables:
+   ```
+   NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+   NEXT_PUBLIC_API_URL=http://localhost:8000
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your-secret-key-here
+   ```
+4. Start the frontend: `npm run dev`
+5. The frontend will run on `http://localhost:3000`
+
+### Full Application
+Both servers need to run simultaneously. The frontend will communicate with the backend API at the specified URL.
+
+## Deployment Updates
+
+Recent changes have been made to prepare the application for deployment:
+
+- Added proper API client implementation in `frontend/lib/api-client.ts`
+- Fixed environment variable compatibility for Vercel deployment
+- Added Node.js version specification for consistent builds
+- Updated Vercel configuration for proper deployment
+- Added proper server-side safety checks to prevent build errors
+- Fixed import path issues for case-sensitive file systems
